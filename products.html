@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop | MobileMart</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/products.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <i class="fas fa-mobile-alt"></i>
+          <span>MobileMart</span>
+        </div>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="products.html" class="active">Products</a>
+          <a href="cart.html" class="cart-link">
+            Cart <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+          </a>
+          <a href="login.html">Login</a>
+        </nav>
+        <button class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Products Section -->
+  <section class="products-section">
+    <div class="container">
+      <div class="products-header">
+        <h1>Shop Accessories</h1>
+        <p>Discover our wide range of premium mobile accessories</p>
+      </div>
+
+      <div class="products-content">
+        <!-- Filters Sidebar -->
+        <aside class="filters-sidebar">
+          <div class="filter-group">
+            <h3>Categories</h3>
+            <div class="filter-options">
+              <label class="filter-option">
+                <input type="checkbox" value="all" checked> All Categories
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" value="charger"> Chargers
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" value="cover"> Cases & Covers
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" value="headphone"> Headphones
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" value="powerbank"> Power Banks
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" value="cable"> Cables
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" value="stand"> Stands & Holders
+              </label>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h3>Price Range</h3>
+            <div class="filter-options">
+              <label class="filter-option">
+                <input type="radio" name="price" value="all" checked> All Prices
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="price" value="0-20"> Under $20
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="price" value="20-50"> $20 - $50
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="price" value="50-100"> $50 - $100
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="price" value="100+"> Over $100
+              </label>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h3>Brand</h3>
+            <div class="filter-options">
+              <label class="filter-option">
+                <input type="checkbox" value="all" checked> All Brands
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" value="samsung"> Samsung
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" value="apple"> Apple
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" value="sony"> Sony
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" value="anker"> Anker
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" value="spigen"> Spigen
+              </label>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h3>Rating</h3>
+            <div class="filter-options">
+              <label class="filter-option">
+                <input type="radio" name="rating" value="all" checked> All Ratings
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="rating" value="5"> 
+                <span class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="rating" value="4"> 
+                <span class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i> & Up
+                </span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="rating" value="3"> 
+                <span class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i> & Up
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <button class="btn filter-btn">Apply Filters</button>
+          <button class="btn btn-outline reset-btn">Reset Filters</button>
+        </aside>
+
+        <!-- Products Grid -->
+        <main class="products-main">
+          <div class="products-toolbar">
+            <div class="results-count">
+              Showing <span id="results-count">24</span> products
+            </div>
+            <div class="sort-options">
+              <label for="sort-by">Sort by:</label>
+              <select id="sort-by">
+                <option value="featured">Featured</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="rating">Customer Rating</option>
+                <option value="newest">Newest Arrivals</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="product-grid" id="product-list">
+            <!-- Products will be loaded by JavaScript -->
+          </div>
+
+          <!-- Pagination -->
+          <div class="pagination">
+            <button class="pagination-btn" disabled>
+              <i class="fas fa-chevron-left"></i> Previous
+            </button>
+            <div class="pagination-numbers">
+              <button class="pagination-number active">1</button>
+              <button class="pagination-number">2</button>
+              <button class="pagination-number">3</button>
+              <span>...</span>
+              <button class="pagination-number">8</button>
+            </div>
+            <button class="pagination-btn">
+              Next <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </main>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter-content">
+        <h2>Stay Updated</h2>
+        <p>Subscribe to our newsletter for the latest products and exclusive offers</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit" class="btn">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="logo">
+            <i class="fas fa-mobile-alt"></i>
+            <span>MobileMart</span>
+          </div>
+          <p>Your one-stop shop for premium mobile accessories that combine style, protection, and functionality.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="login.html">Login</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Customer Service</h3>
+          <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Shipping Policy</a></li>
+            <li><a href="#">Return Policy</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Info</h3>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Digital City</li>
+            <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+            <li><i class="fas fa-envelope"></i> info@mobilemart.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 MobileMart | Designed by Burhan</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/script.js"></script>
+  <script src="/js/products.js"></script>
+</body>
+</html>
